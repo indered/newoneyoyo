@@ -1,5 +1,20 @@
 import { Button, Card, Chip, Link } from '@heroui/react';
 
+const starterCards: Array<{ title: string; body: string }> = [
+  {
+    title: 'Design system',
+    body: 'HeroUI components and Tailwind utilities are wired up.',
+  },
+  {
+    title: 'Deploy path',
+    body: 'Vercel production deploys are part of the bootstrap.',
+  },
+  {
+    title: 'Clean base',
+    body: 'No auth, database, or extra services until the app needs them.',
+  },
+];
+
 export default function App() {
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -18,11 +33,7 @@ export default function App() {
           </div>
         </div>
         <div className="grid gap-4 sm:grid-cols-3">
-          {[
-            ['Design system', 'HeroUI components and Tailwind utilities are wired up.'],
-            ['Deploy path', 'Vercel production deploys are part of the bootstrap.'],
-            ['Clean base', 'No auth, database, or extra services until the app needs them.']
-          ].map(([title, body]) => (
+          {starterCards.map(({ title, body }) => (
             <Card key={title} className="border border-default-200">
               <Card.Content className="gap-2 p-5">
                 <h2 className="text-base font-medium">{title}</h2>
